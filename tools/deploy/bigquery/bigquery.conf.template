@@ -1,0 +1,14 @@
+[public]
+pid_file = ./log/bigquery.$ip.pid
+log_file = ./log/bigquery.$ip.log
+log_level = $log_level
+
+[bigquerytest]
+ob_ip = ${proxyserver0.ip}
+ob_port = ${proxyserver0.port}
+ob_rs_ip = ${rs0.ip}
+ob_rs_port = ${rs0.port}
+
+read_thread_count = ${read_thread_count}
+write_thread_count = ${write_thread_count}
+

@@ -1,0 +1,24 @@
+#This 'inputs' indicates the input paths and corresponding table names.
+#'inputs' should be a python list and each item is a two-value tuple,
+#In every tuple, the first value is data directory in HDFS to be imported,
+#the second one is the corresponding table name relative to the data.
+#the example is:
+#inputs = [
+#('hdfs://hdpnn:9000/group/tbdev/guoxiang.lgx/auction_info_d_big', 'auction_info_d'),
+#('hdfs://hdpnn:9000/group/tbdev/guoxiang.lgx/purl_result_big', 'purl_result'),
+#('hdfs://hdpnn:9000/group/tbdev/guoxiang.lgx/buyer_info_d_big', 'buyer_info_d'),
+#('hdfs://hdpnn:9000/group/tbdev/guoxiang.lgx/key_result_big', 'key_result'),
+#]
+inputs = [
+('hdfs://hdpnn:9000/group/tbdev/guoxiang.lgx/auction_info_d_big', 'auction_info_d'),
+('hdfs://hdpnn:9000/group/tbdev/guoxiang.lgx/purl_result_big', 'purl_result'),
+('hdfs://hdpnn:9000/group/tbdev/guoxiang.lgx/buyer_info_d_big', 'buyer_info_d'),
+('hdfs://hdpnn:9000/group/tbdev/guoxiang.lgx/key_result_big', 'key_result'),
+]
+
+#This 'import_type' parameter represents type of import operation
+#'OVERWRITE' and 'IMPORT' are two kinds of operation
+#'OVERWRITE' transforms the input data directly into ChunkServer
+#and overwrite the existing data
+#'IMPORT' transforms the input data to UpdateServer like normal insert operation
+import_type = 'OVERWRITE'
