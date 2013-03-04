@@ -1,0 +1,45 @@
+[public]
+#The server log
+log_file = /home/admin/oceanbase/log/importserver.log
+log_level = debug
+
+#The pid file used to detect the running of a server instance
+pid_file = /home/admin/oceanbase/log/importserver.pid
+
+#environments
+java_home = /usr/java/jdk1.6.0_13
+hadoop_home = /home/hadoop/hadoop-current
+hadoop_conf_dir = /home/admin/config
+
+[importserver]
+#The listen port of this importserver
+port = 2900
+
+#The application name using for the path of SSTable files
+#the template is
+#app_name = 'asyncface'
+app_name =
+
+#The root direcotry of configurations dispatch.sh based on
+conf_dir = /home/admin/oceanbase/etc/
+bin_dir = /home/admin/oceanbase/bin/
+hadoop_bin_dir = /home/hadoop/hadoop-current/bin/
+#range selecter, like [1-4], can't appear two or more times
+bypass_dir = /data/[1-4]/ups_data/bypass
+
+hdfs_name = hdfs://hdpnn:9000
+
+copy_sstable_concurrency = 8
+
+[rootserver]
+vip = 
+port = 2500
+
+[ob_instances]
+# 多集群部署时，配置所有RS的VIP以及读流量分配
+obi_count=0
+obi0_rs_vip=
+obi0_rs_port=
+obi1_rs_vip=
+obi1_rs_port=
+
